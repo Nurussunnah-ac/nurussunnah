@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের Nurussunnah International Institute  | আধুনিক ও ইসলামি শিক্ষা</title>
+    <style>
+        /* মূল ডিজাইন ও কালার থিম */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* হেডার ও নেভিগেশন */
+        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 24px; font-weight: bold; color: #0066cc; display: flex; align-items: center; }
+        .logo img { height: 40px; margin-right: 10px; }
+        nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 600; }
+        nav a:hover { color: #0066cc; }
+
+        /* ব্যানার সেকশন */
+        .hero { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg') no-repeat center center/cover; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
+        .hero h1 { font-size: 40px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; max-width: 600px; margin-bottom: 25px; }
+        .btn { background: #0066cc; color: #fff; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .btn:hover { background: #004499; }
+
+        /* সেকশন লেআউট */
+        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 30px; color: #111; }
+        
+        /* গ্রিড লেআউট (ডিপার্টমেন্ট ও স্কিলস) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-bottom: 15px; color: #0066cc; font-size: 22px; }
+        
+        /* ফুটর ও যোগাযোগ */
+        footer { background: #222; color: #fff; text-align: center; padding: 40px 20px; margin-top: 60px; }
+        footer p { margin-bottom: 10px; }
+        
+        /* মোবাইল রেসপনসিভ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> 
+            <span>Nurussunnah International Institute</span>
+        </div>
+        <nav>
+            <a href="#about">আমাদের সম্পর্কে</a>
+            <a href="#departments">বিভাগসমূহ</a>
+            <a href="#skills">দক্ষতা সমূহ</a>
+            <a href="#contact">যোগাযোগ</a>
+        </nav>
+    </header>
+
+    <!-- ব্যানার -->
+    <section class="hero">
+        <h1>ইসলামি ও আধুনিক শিক্ষার সমন্বয়</h1>
+        <p>আমরা শিক্ষার্থীদের দক্ষ, নৈতিক ও ভবিষ্যৎমুখী নাগরিক হিসেবে গড়ে তুলতে প্রতিশ্রুতিবদ্ধ।</p>
+        <a href="#contact" class="btn">ভর্তি তথ্য</a>
+    </section>
+
+    <!-- আমাদের সম্পর্কে -->
+    <section class="container" id="about">
+        <h2 class="section-title">আমাদের সম্পর্কে</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 18px;">
+            আমাদের প্রতিষ্ঠানটি মূলত ইসলামি মূল্যবোধ এবং আধুনিক বিজ্ঞান ও প্রযুক্তির সমন্বয়ে একটি দক্ষতা-ভিত্তিক (Skills-based) শিক্ষাক্রম পরিচালনা করে। শিক্ষার্থীদের তাত্ত্বিক শিক্ষার পাশাপাশি প্রফেশনাল ও জীবনমুখী করে তোলাই আমাদের মূল লক্ষ্য।
+        </p>
+    </section>
+
+    <!-- বিভাগসমূহ -->
+    <section class="container" id="departments" style="background: #eef2f5;">
+        <h2 class="section-title">প্রধান বিভাগসমূহ</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>সাধারণ শিক্ষা ও বিজ্ঞান</h3>
+                <p>জাতীয় শিক্ষাক্রমের (NCTB) আলোকে আধুনিক বিজ্ঞান, গণিত ও প্রযুক্তি শিক্ষা।</p>
+            </div>
+            <div class="card">
+                <h3>তাহফীযুল কুরআন</h3>
+                <p>শুদ্ধ উচ্চারণ ও তাজবীদসহ সম্পূর্ণ কুরআন হিফজ এবং ইসলামি শিক্ষা বিভাগ।</p>
+            </div>
+            <div class="card">
+                <h3>ভাষা শিক্ষা</h3>
+                <p>বাংলা, ইংরেজি এবং আরবি ভাষায় অনর্গল কথা বলা ও লেখার বিশেষ কোর্স।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- আইটি ও লাইফ স্কিলস -->
+    <section class="container" id="skills">
+        <h2 class="section-title">আইটি ও প্রফেশনাল স্কিলস</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>কনটেন্ট ক্রিয়েশন ও এডিটিং</h3>
+                <p>ভিডিও এডিটিং, মোশন গ্রাফিক্স, সিনেমাটোগ্রাফি এবং সাউন্ড ডিজাইন।</p>
+            </div>
+            <div class="card">
+                <h3>এআই ও রোবোটিক্স</h3>
+                <p>আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) এর সঠিক ব্যবহার এবং বেসিক রোবোটিক্স ও কোডিং।</p>
+            </div>
+            <div class="card">
+                <h3>লাইফ স্কিলস</h3>
+                <p>টাইম ম্যানেজমেন্ট, পাবলিক স্পিকিং, লিডারশিপ এবং সেলফ-ডিফেন্স ট্রেইনিং।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটর ও যোগাযোগ -->
+    <footer id="contact">
+        <h2 style="margin-bottom: 20px;">যোগাযোগ করুন</h2>
+        <p>📍 ঠিকানা: বক্সনগর, সারুলিয়া, ডেমরা, ঢাকা</p>
+        <p>📞 ফোন: ০১৭৪১৭৮৭১০২, ০১৬09551384</p>
+        <p>&copy; 2026 আপনার প্রতিষ্ঠানের নাম। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
