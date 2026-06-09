@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nurussunnah International Institute  | আধুনিক ও ইসলামি শিক্ষা</title>
     <style>
-        /* ব্যানার এক কোনা থেকে অন্য কোনে যাওয়ার অ্যানিমেশন */
-@keyframes bannerMove {
-    0% {
-        background-position: 0% 0%; /* শুরু হবে বামের ওপরের কোনা থেকে */
-    }
-    100% {
-        background-position: 100% 100%; /* শেষ হবে ডানের নিচের কোনায় */
-    }
-}
         /* স্লাইডার স্টাইল */
 .gallery-section {
     padding: 60px 20px;
@@ -68,24 +59,13 @@
     text-transform: capitalize;
     padding-left: 2px;
 }
-
-        /* অ্যানিমেটেড ব্যানার স্টাইল */
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/Nurussunnah-ac/nurussunnah/main/banner.png') no-repeat;
-    background-size: 130% 130%; /* ছবিটিকে একটু বড় করা হয়েছে যেন নড়াচড়া করার জায়গা পায় */
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 0 20px;
-    
-    /* অ্যানিমেশন চালু করার মূল কোড */
-    animation: bannerMove 20s ease-in-out infinite alternate;
-}
-
+        /* ব্যানার সেকশন */
+        .hero { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg') no-repeat center center/cover; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
+        .hero h1 { font-size: 40px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; max-width: 600px; margin-bottom: 25px; }
+        .btn { background: #0066cc; color: #fff; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .btn:hover { background: #004499; }
+                    
         /* সেকশন লেআউট */
         .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 40px; font-size: 30px; color: #111; }
