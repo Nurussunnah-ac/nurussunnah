@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>আমাদের Nurussunnah International Institute  | আধুনিক ও ইসলামি শিক্ষা</title>
     <style>
+        /* স্লাইডার স্টাইল */
+.gallery-section {
+    padding: 60px 20px;
+    background-color: #eef5f1; /* আপনার কাঁচা পাতা ব্যাকগ্রাউন্ড */
+    text-align: center;
+}
+.section-title {
+    color: #1b5e20; /* আপনার প্রতিষ্ঠানের মূল সবুজ রং */
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.slider-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 3px solid #fff;
+}
+.slide img {
+    width: 100%;
+    height: 450px; /* আইপ্যাড ও মোবাইলের জন্য স্ট্যান্ডার্ড উচ্চতা */
+    object-fit: cover;
+    display: block;
+}
+/* স্লাইড পরিবর্তনের অ্যানিমেশন এফেক্ট */
+.fade {
+    animation: fadeEffect 1.5s;
+}
+@keyframes fadeEffect {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
         /* মূল ডিজাইন ও কালার থিম */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #eef5f1; color: #2d3748; line-height: 1.6; }
@@ -69,6 +104,18 @@
         <a href="https://forms.gle/iWEt4tNkn4sT62zz7" target="_blank" class="btn">Admission</a>
     </section>
 
+    <section class="gallery-section">
+    <h2 class="section-title">ফটো গ্যালারি</h2>
+    <div class="slider-container">
+        <div class="slide fade"><img src="slider1.jpg" alt="Gallery Image 1"></div>
+        <div class="slide fade"><img src="slider2.jpg" alt="Gallery Image 2"></div>
+        <div class="slide fade"><img src="slider3.jpg" alt="Gallery Image 3"></div>
+        <div class="slide fade"><img src="slider4.jpg" alt="Gallery Image 4"></div>
+        <div class="slide fade"><img src="slider5.jpg" alt="Gallery Image 5"></div>
+        <div class="slide fade"><img src="slider6.jpg" alt="Gallery Image 5"></div>
+    </div>
+</section>
+
     <!-- আমাদের সম্পর্কে -->
     <section class="container" id="about">
         <h2 class="section-title">আমাদের সম্পর্কে</h2>
@@ -123,5 +170,29 @@
         <p>&copy; 2026 Nurussunnah International Institute। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        
+        // প্রথমে সব ছবি লুকিয়ে ফেলা
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        
+        // বর্তমান ছবিটি দেখানো
+        slides[slideIndex-1].style.display = "block";  
+        
+        // প্রতি ৩০০০ মিলিমেকেন্ড (৩ সেকেন্ড) পর পর ছবি পরিবর্তন হবে
+        setTimeout(showSlides, 3000); 
+    }
+</script>
+    
 </body>
 </html>
