@@ -86,7 +86,54 @@
             header { flex-direction: column; text-align: center; }
             nav { margin-top: 15px; }
             nav a { margin: 0 10px; }
-        }
+        }/* হোম পেজ চেয়ারম্যান কার্ড স্টাইল */
+.home-chairman-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fdfbfe;
+}
+.chairman-card {
+    max-width: 320px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eef5f1;
+}
+.home-chairman-img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%; /* ছবি গোল করার জন্য */
+    object-fit: cover;
+    border: 3px solid #1b5e20;
+    margin-bottom: 15px;
+}
+.home-chairman-name {
+    color: #1b5e20;
+    font-size: 18px;
+    margin: 5px 0;
+}
+.home-chairman-title {
+    font-size: 14px;
+    color: #718096;
+    margin: 0 0 15px 0;
+}
+.message-link-btn {
+    display: inline-block;
+    background-color: #1b5e20;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+.message-link-btn:hover {
+    background-color: #144517;
+}
     </style>
 </head>
 <body>
@@ -112,6 +159,14 @@
         <a href="https://forms.gle/iWEt4tNkn4sT62zz7" target="_blank" class="btn">Admission</a>
     </section>
 
+    <section class="home-chairman-section">
+    <div class="chairman-card">
+        <img src="chairman.jpg" alt="Mufti Md. Sanaullah Hanafi" class="home-chairman-img">
+        <h3 class="home-chairman-name">Mufti Md. Sanaullah Hanafi</h3>
+        <p class="home-chairman-title">Chairman</p>
+        <a href="chairman-message.html" target="_blank" class="message-link-btn">Message from the Chairman</a>
+    </div>
+</section>
 
     <!-- বিভাগসমূহ -->
     <section class="container" id="departments" style="background: #eef2f5;">
