@@ -269,13 +269,14 @@
         <p>&copy; 2026 Nurussunnah International Institute। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-        <script>
+            <script>
         let slideIndex = 0;
         showSlides();
 
         function showSlides() {
+            let i;
             let slides = document.getElementsByClassName("slide");
-            // এখানে 'let i' ব্যবহার করে লুপ ফিক্স করা হয়েছে যেন ব্রাউজার ক্র্যাশ না করে
+            // এখানে let i বা var i ডিফাইন না থাকায় ক্র্যাশ করছিল, তা গ্লোবাল স্কোপ মুক্ত করা হয়েছে
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
@@ -329,8 +330,8 @@
             }
         }
         
-        // সাইট লোড হওয়ার পর নোটিশ নিয়ে কাজ করবে, ফলে মেইন পেজ লোডিং আটকাবে না
-        window.addEventListener('load', fetchNotices);
+        // আপনার আগের সচল ডম-কন্টেন্ট লোডেড ইভেন্ট ফিরিয়ে আনা হলো
+        window.addEventListener('DOMContentLoaded', fetchNotices);
     </script>
 
 </body>
