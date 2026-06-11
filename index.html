@@ -269,22 +269,19 @@
         <p>&copy; 2026 Nurussunnah International Institute। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-            <script>
+    <script>
         let slideIndex = 0;
         showSlides();
 
         function showSlides() {
             let i;
             let slides = document.getElementsByClassName("slide");
-            // এখানে let i বা var i ডিফাইন না থাকায় ক্র্যাশ করছিল, তা গ্লোবাল স্কোপ মুক্ত করা হয়েছে
-            for (let i = 0; i < slides.length; i++) {
+            for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
-            if (slides[slideIndex-1]) {
-                slides[slideIndex-1].style.display = "block";
-            }
+            slides[slideIndex-1].style.display = "block";  
             setTimeout(showSlides, 3000); 
         }
 
@@ -297,12 +294,14 @@
 
         // গুগল শিট নোটিশ বোর্ড কানেকশন
         const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbyUzVWWW21jN3PgeH-f6sVJ8-VjWWJWwLxaI7xj7H7UIflZ3DoEk2306og2Cm5RHtwT/exec';
+
         async function fetchNotices() {
             try {
                 const response = await fetch(googleSheetWebAppUrl);
                 const data = await response.json();
                 const noticeListContainer = document.getElementById('sheets-notice-list');
-                noticeListContainer.innerHTML = '';
+                noticeListContainer.innerHTML = ''; 
+
                 if(!data || data.length === 0) {
                     noticeListContainer.innerHTML = '<p style="text-align:center; color:#718096; font-size:15px;">আপাতত কোনো নোটিশ নেই।</p>';
                     return;
@@ -329,10 +328,7 @@
                 document.getElementById('sheets-notice-list').innerHTML = '<p style="text-align:center; color:red; font-size:15px;">নোটিশ লোড করতে সমস্যা হয়েছে।</p>';
             }
         }
-        
-        // আপনার আগের সচল ডম-কন্টেন্ট লোডেড ইভেন্ট ফিরিয়ে আনা হলো
         window.addEventListener('DOMContentLoaded', fetchNotices);
     </script>
-
 </body>
 </html>
