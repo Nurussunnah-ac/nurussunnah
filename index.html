@@ -135,16 +135,54 @@
 }
 
 @media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: flex-end; /* বাটনটি ডানপাশে দেখাবে */
+        position: relative;
+        background-color: #fff;
+    }
+    
+    .menu-toggle {
+        display: block; /* মোবাইলে থ্রি-লাইন বাটনটি দৃশ্যমান হবে */
+    }
+    
     .nav-links {
+        display: none; /* শুরুতে মেনুগুলো মোবাইলে লুকিয়ে থাকবে */
         flex-direction: column;
         width: 100%;
-        padding: 10px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 999;
     }
+    
+    /* থ্রি-লাইনে ক্লিক করলে এই active ক্লাসটি চালু হবে এবং মেনু দেখাবে */
+    .nav-links.active {
+        display: flex;
+    }
+    
     .nav-links li {
-        margin: 5px 0;
         width: 100%;
         text-align: center;
     }
+    
+    .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+}
+
+/* থ্রি-লাইন বাটনটি ডেক্সটপে বা বড় স্ক্রিনে লুকিয়ে থাকবে */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #1b5e20;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 12px 20px;
 }
 
     </style>
@@ -156,9 +194,15 @@
             <img src="logo.png" alt="Logo"> 
             <span>Nurussunnah International Institute</span>
         </div>
-        <nav>
-    <ul class="nav-links">
-        <li><a href="index.html">হোম</a></li>
+<nav>
+    <!-- ☰ নতুন থ্রি-লাইন মোবাইল বাটন -->
+    <button class="menu-toggle" id="mobile-menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <!-- ul ট্যাগটিতে id="nav-links" যুক্ত করা হয়েছে -->
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">হোম</a></li>
         <li><a href="porichiti.html">পরিচিতি</a></li>
         <li><a href="safollo.html">আমাদের সাফল্য</a></li>
         <li><a href="academic.html">একাডেমিক</a></li>
@@ -374,6 +418,24 @@
         
         // ডম কন্টেন্ট লোড ইভেন্ট ফিক্সড
         window.addEventListener('DOMContentLoaded', fetchNotices);
+    </script>
+        
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            // মেনু শো/হাইড টগল করবে
+            navLinks.classList.toggle('active');
+            
+            // ক্লিক করলে থ্রি-লাইন আইকনটি বদলে ক্রস (X) চিহ্ন হবে
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
     </script>
 </body>
 </html>
