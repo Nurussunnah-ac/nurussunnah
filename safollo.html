@@ -80,15 +80,77 @@
         footer { background-color: #1a237e; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 60px; }
 
         /* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
-        @media (max-width: 768px) {
-            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
-            .logo-area { flex-direction: column; text-align: center; }
-            .logo-area img { margin-right: 0; margin-bottom: 10px; }
-            .nav-links { flex-direction: column; text-align: center; }
-            .nav-links li { margin: 0; }
-            .nav-links a { padding: 10px; }
-            .success-grid { grid-template-columns: 1fr; }
+                /* ডেক্সটপে থ্রি-লাইন বাটন লুকিয়ে থাকবে */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #1b5e20;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 12px 20px;
         }
+
+        @media (max-width: 768px) {
+            /* লোগো ও বাটন সামনাসামনি রাখার জন্য */
+            header { 
+                flex-direction: row !important; 
+                justify-content: space-between !important; 
+                align-items: center !important;
+                padding: 10px 15px !important;
+            }
+            
+            .logo {
+                font-size: 20px !important; /* প্রতিষ্ঠানের নাম মোবাইলে বড় দেখাবে */
+            }
+            .logo img {
+                height: 35px !important;
+            }
+
+            nav { 
+                margin-top: 0 !important; 
+                display: flex;
+                align-items: center;
+            }
+            
+            .menu-toggle {
+                display: block !important;
+            }
+            
+            /* শুরুতে মেনু মোবাইলে হাইড থাকবে */
+            .nav-links {
+                display: none !important; 
+                flex-direction: column !important;
+                width: 100% !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                background-color: #ffffff !important;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+                z-index: 999 !important;
+                margin: 0 !important;
+                padding: 10px 0 !important;
+            }
+            
+            /* active ক্লাস পেলে মেনু শো করবে */
+            .nav-links.active {
+                display: flex !important;
+            }
+            
+            .nav-links li {
+                width: 100% !important;
+                margin: 0 !important;
+                text-align: center !important;
+            }
+            
+            .nav-links a {
+                padding: 12px !important;
+                margin: 0 !important;
+                border-bottom: 1px solid #f0f0f0 !important;
+                font-size: 15px !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -211,6 +273,35 @@
     <footer>
         <p>&copy; 2026 নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        // থ্রি-লাইন বাটনে ক্লিক করলে মেনু টগল হবে
+        menuBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // বাইরের ক্লিকের ইভেন্টকে বাধা দেবে
+            navLinks.classList.toggle('active');
+            
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // পেজের অন্য যেকোনো জায়গায় ক্লিক করলে মেনু বন্ধ হয়ে যাবে
+        document.addEventListener('click', (event) => {
+            // যদি ক্লিকটি মেনু বাটন বা মেনু লিংকের ভেতর না হয়
+            if (!menuBtn.contains(event.target) && !navLinks.contains(event.target)) {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
