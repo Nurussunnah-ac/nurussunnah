@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের সাফল্য - নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* মূল থিম ও ফন্ট */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'SolaimanLipi', Arial, sans-serif; }
+        body { background-color: #f4f7f5; color: #333; line-height: 1.8; }
+        a { text-decoration: none; }
+
+        /* হেডার ও নেভিগেশন */
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .top-bar { background-color: #1a237e; color: #fff; padding: 8px 20px; display: flex; justify-content: space-between; font-size: 14px; }
+        .logo-area { display: flex; align-items: center; padding: 15px 20px; background: linear-gradient(135deg, #0d47a1, #1b5e20); color: white; }
+        .logo-area img { height: 60px; margin-right: 15px; }
+        .logo-text h1 { font-size: 24px; font-weight: bold; }
+        .logo-text p { font-size: 14px; opacity: 0.9; }
+
+        /* মেনুবার */
+        nav { background-color: #fff; border-bottom: 3px solid #1b5e20; padding: 0 20px; }
+        .nav-links { list-style: none; display: flex; justify-content: center; }
+        .nav-links li { margin: 0 10px; }
+        .nav-links a { color: #333; font-weight: bold; padding: 15px 20px; display: block; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #1b5e20; background-color: #eef5f1; }
+
+        /* ব্যানার সেকশন */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./banner.jpg') no-repeat center center/cover;
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+
+        /* মেইন কনটেন্ট এরিয়া */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* শুরুর ভূমিকা */
+        .intro-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 40px; border-top: 4px solid #1b5e20; }
+        .intro-box p { font-size: 18px; color: #555; max-width: 900px; margin: 0 auto; }
+
+        /* সাফল্য গ্রিড লেআউট */
+        .success-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+        .success-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 4px solid #e0e0e0; }
+        .success-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        
+        /* কার্ড হেডার */
+        .card-header { display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #f5f5f5; padding-bottom: 15px; }
+        .card-header i { font-size: 30px; margin-right: 15px; }
+        .card-header h3 { font-size: 22px; font-weight: bold; }
+        
+        /* নির্দিষ্ট কার্ড কালার থিম */
+        .hifz-theme { color: #1b5e20; }
+        .hifz-theme-card { border-top: 4px solid #1b5e20; }
+        .exam-theme { color: #0d47a1; }
+        .exam-theme-card { border-top: 4px solid #0d47a1; }
+        .tech-theme { color: #e65100; }
+        .tech-theme-card { border-top: 4px solid #e65100; }
+        .science-theme { color: #006064; }
+        .science-theme-card { border-top: 4px solid #006064; }
+
+        /* লিস্ট স্টাইল */
+        .success-list { list-style: none; }
+        .success-list li { padding: 12px 0; border-bottom: 1px solid #fafafa; font-size: 16px; display: flex; align-items: flex-start; }
+        .success-list li i { margin-right: 12px; margin-top: 5px; font-size: 16px; }
+        .success-list li strong { color: #111; }
+        
+        /* ব্যাজ/হাইলাইট স্টাইল */
+        .badge { background-color: #ffeb3b; color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 14px; margin-left: 5px; }
+        .badge-green { background-color: #e8f5e9; color: #1b5e20; }
+        .badge-blue { background-color: #e3f2fd; color: #0d47a1; }
+
+        /* শেষ বাণী */
+        .motto-box { background: linear-gradient(135deg, #1a237e, #0d47a1); color: white; padding: 35px; border-radius: 8px; text-align: center; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .motto-box blockquote { font-size: 20px; font-style: italic; margin-bottom: 15px; font-weight: 500; }
+        .motto-box p { font-size: 15px; opacity: 0.8; letter-spacing: 1px; }
+
+        /* ফুটার */
+        footer { background-color: #1a237e; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 60px; }
+
+        /* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
+            .logo-area { flex-direction: column; text-align: center; }
+            .logo-area img { margin-right: 0; margin-bottom: 10px; }
+            .nav-links { flex-direction: column; text-align: center; }
+            .nav-links li { margin: 0; }
+            .nav-links a { padding: 10px; }
+            .success-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার সেকশন -->
+    <header>
+        <div class="top-bar">
+            <div>Madrasah Code: 11004 | EIIN: 10706</div>
+            <div><i class="fa-solid fa-envelope"></i> Nurussunnah.ac@gmail.com</div>
+        </div>
+        <div class="logo-area">
+            <img src="./logo.png" alt="মাদরাসা লোগো">
+            <div class="logo-text">
+                <h1>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</h1>
+                <p>একটি আধুনিক দ্বীনি ও আন্তর্জাতিক মানসম্পন্ন শিক্ষাপ্রতিষ্ঠান</p>
+            </div>
+        </div>
+        <!-- মেনুবার -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="porichiti.html">পরিচিতি</a></li>
+                <li><a href="safollo.html" class="active">আমাদের সাফল্য</a></li>
+                <li><a href="academic.html">একাডেমিক</a></li>
+                <li><a href="abasik.html">আবাসিক</a></li>
+                <li><a href="folafol.html">ফলাফল</a></li>
+                <li><a href="library.html">লাইব্রেরি</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- পেজ ব্যানার -->
+    <div class="page-banner">
+        <h2>গৌরবময় সাফল্য ও অর্জন</h2>
+        <p>প্রাতিষ্ঠানিক মেধা, প্রযুক্তি ও বিজ্ঞান চর্চায় আমাদের অগ্রযাত্রা</p>
+    </div>
+
+    <!-- মেইন কনটেন্ট -->
+    <div class="container">
+        
+        <!-- ভূমিকা বক্স -->
+        <div class="intro-box">
+            <p>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট শুধুমাত্র দ্বীনি ইলমের মাঝেই সীমাবদ্ধ নয়, বরং প্রাতিষ্ঠানিক শিক্ষা, আধুনিক তথ্যপ্রযুক্তি এবং সমসাময়িক বিজ্ঞান চর্চায় আমাদের শিক্ষার্থীরা জাতীয় স্তরে প্রতিনিয়ত মেধার স্বাক্ষর রেখে চলেছে। গত শিক্ষাবর্ষে আমাদের অর্জিত অনন্য সাফল্যসমূহ নিচে তুলে ধরা হলো:</p>
+        </div>
+
+        <!-- সাফল্য গ্রিড -->
+        <div class="success-grid">
+            
+            <!-- ১. তাহফীযুল কুরআন বিভাগ -->
+            <div class="success-card hifz-theme-card">
+                <div class="card-header hifz-theme">
+                    <i class="fa-solid fa-kaaba"></i>
+                    <h3>তাহফীযুল কুরআন বিভাগ (হিফয)</h3>
+                </div>
+                <ul class="success-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check hifz-theme"></i>
+                        <span><strong>১০০% সমাপ্তি:</strong> গত বছর আমাদের হিফয বিভাগ থেকে সম্পূর্ণ সফলতার সাথে পবিত্র কুরআন হিফয সম্পন্ন করেছে <strong class="badge badge-green">২০ জন</strong> কৃতি ছাত্র।</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ২. বোর্ড পরীক্ষার ফলাফল -->
+            <div class="success-card exam-theme-card">
+                <div class="card-header exam-theme">
+                    <i class="fa-solid fa-medal"></i>
+                    <h3>বোর্ড পরীক্ষার অসাধারণ ফলাফল</h3>
+                </div>
+                <ul class="success-list">
+                    <li>
+                        <i class="fa-solid fa-star exam-theme"></i>
+                        <span><strong>দাখিল পরীক্ষা:</strong> ২০ জন পরীক্ষার্থীর মধ্যে <strong class="badge">২০ জনই জিপিএ ৫ (A+)</strong> পেয়ে শতভাগ সাফল্যের রেকর্ড গড়েছে।</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-star exam-theme"></i>
+                        <span><strong>আলিম পরীক্ষা:</strong> মোট ২০ জন পরীক্ষার্থীর মধ্যে <strong>১৫ জন 'এ প্লাস' (A+)</strong> এবং <strong>৫ জন 'এ গ্রেড' (A)</strong> অর্জন করেছে।</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-star exam-theme"></i>
+                        <span><strong>দাওরায়ে হাদীস (মাস্টার্স):</strong> কওমী মাদরাসা শিক্ষাবোর্ডের অধীনে <strong>১৫ জন 'মুমতাজ' (স্টার মার্ক)</strong> এবং <strong>৫ জন 'জাইয়্যেদ জিদ্দান' (প্রথম বিভাগ)</strong> লাভ করেছে।</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ৩. তথ্যপ্রযুক্তি ও কম্পিউটার -->
+            <div class="success-card tech-theme-card">
+                <div class="card-header tech-theme">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>তথ্যপ্রযুক্তি ও কম্পিউটার শিক্ষা</h3>
+                </div>
+                <ul class="success-list">
+                    <li>
+                        <i class="fa-solid fa-square-poll-vertical tech-theme"></i>
+                        <span><strong>১০০% এ প্লাস (A+):</strong> আধুনিক সিলেবাসের অংশ হিসেবে উপরোক্ত সকল কৃতি শিক্ষার্থী তাদের মূল পড়াশোনার পাশাপাশি মাদরাসার আইটি ল্যাব থেকে <strong>'বেসিক কম্পিউটার প্রশিক্ষণ'</strong> সফলভাবে সম্পন্ন করেছে এবং প্রত্যেকেই মূল্যায়নে <strong class="badge" style="background-color: #ffe0b2;">'এ প্লাস' (A+)</strong> গ্রেড অর্জন করেছে।</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ৪. বিজ্ঞান ও রোবোটিক্স -->
+            <div class="success-card science-theme-card">
+                <div class="card-header science-theme">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>জাতীয় বিজ্ঞান ও রোবোটিক্স</h3>
+                </div>
+                <ul class="success-list">
+                    <li>
+                        <i class="fa-solid fa-trophy science-theme"></i>
+                        <span><strong>সারাদেশে ১ম স্থান:</strong> সমসাময়িক প্রযুক্তি ও আধুনিক বিজ্ঞানে আমাদের ছাত্রদের পারদর্শিতা আজ জাতীয়ভাবে স্বীকৃত। <strong>জাতীয় বিজ্ঞান প্রতিযোগিতায় (National Science Competition)</strong> আমাদের মাদরাসার রোবোটিক্স টিম অসাধারণ কৃত্বিত্ব দেখিয়ে <strong class="badge" style="background-color: #b2ebf2; color: #006064;">সারাদেশে প্রথম (১ম)</strong> স্থান অর্জন করে গৌরব বয়ে এনেছে।</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- শেষ বাণী বক্স -->
+        <div class="motto-box">
+            <blockquote>"ঐতিহ্যবাহী ধ্রুপদী জ্ঞান, কঠোর নিয়মানুবর্তিতা এবং আধুনিক প্রযুক্তির সঠিক সমন্বয়ই আমাদের শিক্ষার্থীদের এই বহুমুখী সাফল্যের মূল চাবিকাঠি।"</blockquote>
+            <p>— শিক্ষা প্রশাসন, নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</p>
+        </div>
+
+    </div>
+
+    <!-- ফুটার সেকশন -->
+    <footer>
+        <p>&copy; 2026 নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
