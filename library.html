@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডিজিটাল লাইব্রেরি - নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* মূল থিম ও ফন্ট */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'SolaimanLipi', Arial, sans-serif; }
+        body { background-color: #f4f7f5; color: #333; line-height: 1.8; }
+        a { text-decoration: none; }
+
+        /* হেডার ও নেভিগেশন */
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .top-bar { background-color: #1a237e; color: #fff; padding: 8px 20px; display: flex; justify-content: space-between; font-size: 14px; }
+        .logo-area { display: flex; align-items: center; padding: 15px 20px; background: linear-gradient(135deg, #0d47a1, #1b5e20); color: white; }
+        .logo-area img { height: 60px; margin-right: 15px; }
+        .logo-text h1 { font-size: 24px; font-weight: bold; }
+        .logo-text p { font-size: 14px; opacity: 0.9; }
+
+        /* মেনুবার */
+        nav { background-color: #fff; border-bottom: 3px solid #1b5e20; padding: 0 20px; }
+        .nav-links { list-style: none; display: flex; justify-content: center; }
+        .nav-links li { margin: 0 10px; }
+        .nav-links a { color: #333; font-weight: bold; padding: 15px 20px; display: block; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #1b5e20; background-color: #eef5f1; }
+
+        /* পেজ ব্যানার */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('./banner.jpg') no-repeat center center/cover;
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+
+        /* মেইন কনটেন্ট এরিয়া */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* লাইব্রেরি সেকশন কার্ড */
+        .library-section { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 35px; border-top: 4px solid #1b5e20; }
+        .library-section h3 { color: #1a237e; font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .library-section h3 i { margin-right: 12px; color: #1b5e20; }
+
+        /* বইয়ের তালিকা টেবিল স্টাইল */
+        .book-table { width: 100%; border-collapse: collapse; text-align: left; margin-top: 10px; }
+        .book-table th, .book-table td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; text-align: right; }
+        .book-table th:first-child, .book-table td:first-child { text-align: left; }
+        .book-table th { background-color: #f9faf9; color: #1a237e; font-weight: bold; font-size: 16px; }
+        .book-table td { font-size: 15.5px; color: #444; }
+        .book-table tr:hover { background-color: #fcfdfc; }
+
+        /* আর্কাইভ ডটকম বাটন */
+        .read-btn { 
+            display: inline-flex; align-items: center; background-color: #0d47a1; color: white; 
+            padding: 6px 14px; border-radius: 4px; font-size: 14px; font-weight: bold; transition: 0.2s; 
+        }
+        .read-btn i { margin-right: 6px; font-size: 12px; }
+        .read-btn:hover { background-color: #0a367c; transform: translateY(-1px); }
+
+        /* ফুটার */
+        footer { background-color: #1a237e; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 60px; }
+
+        /* রেসপন্সিভ ডিজাইন */
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
+            .logo-area { flex-direction: column; text-align: center; }
+            .logo-area img { margin-right: 0; margin-bottom: 10px; }
+            .nav-links { flex-direction: column; text-align: center; }
+            .nav-links li { margin: 0; }
+            .nav-links a { padding: 10px; }
+            .book-table th, .book-table td { padding: 8px 10px; font-size: 14px; }
+            .read-btn { padding: 5px 10px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার সেকশন -->
+    <header>
+        <div class="top-bar">
+            <div>Madrasah Code: 11004 | EIIN: 10706</div>
+            <div><i class="fa-solid fa-envelope"></i> Nurussunnah.ac@gmail.com</div>
+        </div>
+        <div class="logo-area">
+            <img src="./logo.png" alt="মাদরাসা লোগো">
+            <div class="logo-text">
+                <h1>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</h1>
+                <p>একটি আধুনিক দ্বীনি ও আন্তর্জাতিক মানসম্পন্ন শিক্ষাপ্রতিষ্ঠান</p>
+            </div>
+        </div>
+        <!-- মেনুবার -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="porichiti.html">পরিচিতি</a></li>
+                <li><a href="safollo.html">আমাদের সাফল্য</a></li>
+                <li><a href="academic.html">একাডেমিক</a></li>
+                <li><a href="abasik.html">আবাসিক</a></li>
+                <li><a href="folafol.html">ফলাফল</a></li>
+                <li><a href="library.html" class="active">লাইব্রেরি</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- পেজ ব্যানার -->
+    <div class="page-banner">
+        <h2>অনলাইন মাকতাবা ও ডিজিটাল লাইব্রেরি</h2>
+        <p>জ্ঞানার্জনের সুবিধার জন্য ইন্টারনেট আর্কাইভে সংরক্ষিত কিতাবসমূহের সংকলন</p>
+    </div>
+
+    <!-- মেইন কনটেন্ট -->
+    <div class="container">
+        
+        <!-- অপশন ১: আমাদের প্রকাশনা -->
+        <div class="library-section">
+            <h3><i class="fa-solid fa-feather-pointed"></i> আমাদের প্রকাশনা</h3>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>বইয়ের নাম</th>
+                        <th>বিবরণ/লেখক</th>
+                        <th>অনলাইন লিংক</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১. বাৎসরিক স্মারকপত্র ২০২৫</td>
+                        <td>ইনস্টিটিউট প্রকাশনা বিভাগ</td>
+                        <!-- এখানে href="#" এর জায়গায় archive.org এর বইয়ের লিংক বসাবেন -->
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                    <tr>
+                        <td>২. দ্বীনি শিক্ষা ও আধুনিকায়ন রূপরেখা</td>
+                        <td>রিসার্চ সেল, নূরুচ্ছুন্নাহ</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- অপশন ২: ক্লাস ভিত্তিক লাইব্রেরি -->
+        <div class="library-section" style="border-top-color: #0d47a1;">
+            <h3><i class="fa-solid fa-graduation-cap"></i> ক্লাস ভিত্তিক লাইব্রেরি</h3>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>বইয়ের নাম</th>
+                        <th>শ্রেণি/বিভাগ</th>
+                        <th>অনলাইন লিংক</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১. আল-আকায়েদ আল-ইসলামিয়্যাহ</td>
+                        <td>কিতাব বিভাগ (১ম বর্ষ)</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                    <tr>
+                        <td>২. এসো আরবি শিখি (১ম খণ্ড)</td>
+                        <td>ইবতিদাইয়্যাহ শ্রেণি</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                    <tr>
+                        <td>৩. তাইসীরুল মুবতাদী</td>
+                        <td>নাহব-সরফ সেকশন</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- অপশন ৩: সাধারণ লাইব্রেরি -->
+        <div class="library-section" style="border-top-color: #f57c00;">
+            <h3><i class="fa-solid fa-book-bookmark"></i> সাধারণ লাইব্রেরি</h3>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>বইয়ের নাম</th>
+                        <th>বিষয়/ক্যাটাগরি</th>
+                        <th>অনলাইন লিংক</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১. সীরাতুর রাসূল (সা.)</td>
+                        <td>ইতিহাস ও সীরাত</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                    <tr>
+                        <td>২. রিয়াদুস সালিহীন (অনুবাদ)</td>
+                        <td>হাদিস শরিফ</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                    <tr>
+                        <td>৩. ফতোয়া ও মাসায়েল সমগ্র</td>
+                        <td>ফিকহ ও ফতোয়া</td>
+                        <td><a href="https://archive.org" target="_blank" class="read-btn"><i class="fa-solid fa-book-open"></i> বইটি পড়ুন</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- ফুটার সেকশন -->
+    <footer>
+        <p>&copy; 2026 নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
