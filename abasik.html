@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আবাসিক নিয়মনীতি - নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* মূল থিম ও ফন্ট */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'SolaimanLipi', Arial, sans-serif; }
+        body { background-color: #f4f7f5; color: #333; line-height: 1.8; }
+        a { text-decoration: none; }
+
+        /* হেডার ও নেভিগেশন */
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .top-bar { background-color: #1a237e; color: #fff; padding: 8px 20px; display: flex; justify-content: space-between; font-size: 14px; }
+        .logo-area { display: flex; align-items: center; padding: 15px 20px; background: linear-gradient(135deg, #0d47a1, #1b5e20); color: white; }
+        .logo-area img { height: 60px; margin-right: 15px; }
+        .logo-text h1 { font-size: 24px; font-weight: bold; }
+        .logo-text p { font-size: 14px; opacity: 0.9; }
+
+        /* মেনুবার */
+        nav { background-color: #fff; border-bottom: 3px solid #1b5e20; padding: 0 20px; }
+        .nav-links { list-style: none; display: flex; justify-content: center; }
+        .nav-links li { margin: 0 10px; }
+        .nav-links a { color: #333; font-weight: bold; padding: 15px 20px; display: block; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #1b5e20; background-color: #eef5f1; }
+
+        /* পেজ ব্যানার */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./banner.jpg') no-repeat center center/cover;
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+
+        /* মেইন কনটেন্ট এরিয়া */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* শুরুর ভূমিকা */
+        .intro-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 40px; border-top: 4px solid #1b5e20; }
+        .intro-box p { font-size: 18px; color: #555; max-width: 900px; margin: 0 auto; }
+
+        /* সেকশন হেডার */
+        .section-title { color: #1a237e; margin-bottom: 25px; font-size: 24px; font-weight: bold; display: flex; align-items: center; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        .section-title i { margin-right: 12px; }
+
+        /* ইবাদত ও নিয়মনীতি সেকশন */
+        .rules-block { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .rule-card { background: #f8faf8; padding: 25px; border-radius: 6px; border-left: 4px solid #1b5e20; }
+        .rule-card h4 { color: #1a237e; margin-bottom: 10px; font-size: 19px; display: flex; align-items: center; }
+        .rule-card h4 i { margin-right: 10px; color: #1b5e20; }
+        .rule-card p { font-size: 15.5px; color: #444; text-align: justify; }
+
+        /* সাধারণ শৃঙ্খলা তালিকা */
+        .general-rules { list-style: none; }
+        .general-rules li { padding: 12px 15px; border-bottom: 1px solid #f5f5f5; font-size: 16px; display: flex; align-items: flex-start; background: #fafafa; margin-bottom: 10px; border-radius: 4px; }
+        .general-rules li i { color: #d32f2f; margin-right: 12px; margin-top: 5px; font-size: 18px; }
+        .general-rules li strong { color: #111; margin-right: 5px; }
+
+        /* 🔘 নতুন অনলাইন আবেদন বাটন সেকশন */
+        .action-section { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 40px; border-top: 4px solid #0d47a1; }
+        .action-section h3 { color: #1a237e; font-size: 22px; margin-bottom: 10px; }
+        .action-section p { color: #666; margin-bottom: 25px; font-size: 16px; }
+        .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 15px 30px; font-size: 17px; font-weight: bold; color: white; 
+            border-radius: 6px; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn i { margin-right: 10px; font-size: 20px; }
+        
+        .btn-apply { background-color: #1b5e20; }
+        .btn-apply:hover { background-color: #144317; transform: translateY(-2px); }
+        
+        .btn-cancel { background-color: #c62828; }
+        .btn-cancel:hover { background-color: #9a1f1f; transform: translateY(-2px); }
+
+        /* শেষ বাণী বক্স */
+        .motto-box { background: linear-gradient(135deg, #1a237e, #0d47a1); color: white; padding: 35px; border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .motto-box blockquote { font-size: 20px; font-style: italic; margin-bottom: 15px; font-weight: 500; }
+
+        /* ফুটার */
+        footer { background-color: #1a237e; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 60px; }
+
+        /* রেসপন্সিভ ডিজাইন */
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
+            .logo-area { flex-direction: column; text-align: center; }
+            .logo-area img { margin-right: 0; margin-bottom: 10px; }
+            .nav-links { flex-direction: column; text-align: center; }
+            .nav-links li { margin: 0; }
+            .nav-links a { padding: 10px; }
+            .rules-grid { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার সেকশন -->
+    <header>
+        <div class="top-bar">
+            <div>Madrasah Code: 11004 | EIIN: 10706</div>
+            <div><i class="fa-solid fa-envelope"></i> Nurussunnah.ac@gmail.com</div>
+        </div>
+        <div class="logo-area">
+            <img src="./logo.png" alt="মাদরাসা লোগো">
+            <div class="logo-text">
+                <h1>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</h1>
+                <p>একটি আধুনিক দ্বীনি ও আন্তর্জাতিক মানসম্পন্ন শিক্ষাপ্রতিষ্ঠান</p>
+            </div>
+        </div>
+        <!-- মেনুবার -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="porichiti.html">পরিচিতি</a></li>
+                <li><a href="safollo.html">আমাদের সাফল্য</a></li>
+                <li><a href="academic.html">একাডেমিক</a></li>
+                <li><a href="abasik.html" class="active">আবাসিক</a></li>
+                <li><a href="folafol.html">ফলাফল</a></li>
+                <li><a href="library.html">লাইব্রেরি</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- পেজ ব্যানার -->
+    <div class="page-banner">
+        <h2>আবাসিক ব্যবস্থাপনা ও নিয়মনীতি</h2>
+        <p>পবিত্র ও সুশৃঙ্খল পরিবেশে দ্বীনি চরিত্র গঠনের নির্ভরযোগ্য ঐতিহ্য</p>
+    </div>
+
+    <!-- মেইন কনটেন্ট -->
+    <div class="container">
+        
+        <!-- ভূমিকা বক্স -->
+        <div class="intro-box">
+            <p>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট-এর ছাত্রাবাস কেবল থাকার স্থান নয়, বরং এটি আত্মশুদ্ধি, সুন্নাহর আমল এবং চরিত্র গঠনের একটি অনন্য কানন। ছাত্রাবাসে অবস্থানরত প্রত্যেক ছাত্রকে দ্বীনি পরিবেশ ও নিয়মানুবর্তিতা বজায় রাখতে কঠোরভাবে নিচের বিধিমালা মেনে চলতে হয়।</p>
+        </div>
+
+        <!-- সেকশন ১: ইবাদত ও আধ্যাত্মিক রুটিন -->
+        <div class="rules-block">
+            <h3 class="section-title"><i class="fa-solid fa-mosque" style="color: #1b5e20;"></i> দৈনিক ইবাদত ও আধ্যাত্মিক বিধিমালা</h3>
+            <div class="rules-grid">
+                
+                <div class="rule-card">
+                    <h4><i class="fa-solid fa-clock"></i> জামাতে নামাজ আদায়</h4>
+                    <p>ছাত্রাবাসের প্রত্যেক শিক্ষার্থীকে ৫ ওয়াক্ত নামাজ অবশ্যই মুসাল্লায় (মসজিদে) তাকবীরে ঊলার সাথে জামাতে আদায় করতে হবে। আজানের সাথে সাথে সমস্ত প্রাতিষ্ঠানিক ও ব্যক্তিগত কাজ বন্ধ করে নামাজের প্রস্তুতি নেওয়া বাধ্যতামূলক।</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4><i class="fa-solid fa-book-quran"></i> দৈনিক কুরআন তিলাওয়াত</h4>
+                    <p>ফজর এবং আসর বা মাগরিবের নামাজের পর নির্ধারিত সময়ে প্রত্যেক ছাত্রকে অত্যন্ত মনোযোগ ও তাজবীদের সাথে পবিত্র কুরআন তিলাওয়াত করতে হবে। হিফয ও কিতাব বিভাগের ছাত্রদের এই তিলাওয়াতের সেশনটি শিক্ষকের প্রত্যক্ষ তত্ত্বাবধানে পরিচালিত হয়।</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4><i class="fa-solid fa-hands-praying"></i> সকাল-সন্ধ্যার জিকির ও দোয়া</h4>
+                    <p>রাসূলুল্লাহ (সা.)-এর সুন্নাহ মোতাবেক সকাল এবং সন্ধ্যার মাসনূন দোয়া ও জিকির আজকারের আমলগুলো ছাত্রদের অভ্যাসে পরিণত করানো হয়। এশার নামাজের পর এবং ঘুমানোর পূর্বে সুন্নতি আমলসমূহ পালন করা আবশ্যক।</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4><i class="fa-solid fa-graduation-cap"></i> তাকরীর ও মোতাহালা (অধ্যয়ন সেশন)</h4>
+                    <p>রাতের খাবারের পর নির্ধারিত সময়ে বাধ্যতামূলক নৈশকালীন অধ্যয়ন বা 'মোতাহালা' সেশনে অংশ নিতে হবে। এই সময়ে কোনো ছাত্র পড়ালেখা ব্যতিরেকে অন্য কোনো কাজে লিপ্ত থাকতে পারবে না।</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- সেকশন ২: সাধারণ শৃঙ্খলা ও ক্যাম্পাস পরিচালনা -->
+        <div class="rules-block" style="border-top: 4px solid #d32f2f;">
+            <h3 class="section-title"><i class="fa-solid fa-scale-balanced" style="color: #d32f2f;"></i> সাধারণ শৃঙ্খলা ও আবাসিক আচরণবিধি</h3>
+            <ul class="general-rules">
+                <li>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><strong>পোশাকের পরিচ্ছন্নতা ও সুন্নতি লেবাস:</strong> ছাত্রাবাসের ভেতরে ও বাইরে সর্বদা সুন্নাহ সম্মত মার্জিত পোশাক (জুব্বা/পাঞ্জাবি ও টুпи) পরিধান করতে হবে এবং চুল ও নখ সুন্নতি তরীকায় ছাঁটতে হবে।</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><strong>ডিজিটাল ডিভাইস ও মোবাইল নিষিদ্ধকরণ:</strong> আবাসিক ছাত্রদের জন্য কোনো প্রকার স্মার্টফোন, ব্যক্তিগত ইন্টারনেট ডিভাইস বা বিনোদনমূলক ইলেকট্রনিক সামগ্রী রাখা সম্পূর্ণ নিষিদ্ধ। তবে আইটি ল্যাবের নির্ধারিত সেশনে শিক্ষকের উপস্থিতিতে কম্পিউটার ব্যবহারের অনুমতি রয়েছে।</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><strong>আবাসিক কক্ষ ও হলের পরিচ্ছন্নতা:</strong> নিজের বিছানা, ট্রাঙ্ক, কিতাবের তাক এবং কক্ষের আশপাশ সর্বদা পরিষ্কার-পরিচ্ছন্ন রাখার দায়িত্ব ছাত্রদের নিজেদের। প্রতি সপ্তাহে হল পরিদর্শকের মাধ্যমে পরিচ্ছন্নতা মূল্যায়ন করা হয়।</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><strong>যাতায়াত ও ছুটি নিয়ন্ত্রণ:</strong> Authorities বা কর্তৃপক্ষের পূর্বানুমতি এবং লিখিত গেটপাস ব্যতিরেকে কোনো ছাত্র আবাসিক ক্যাম্পাসের সীমানার বাইরে যেতে পারবে না। বাৎসরিক ছুটির বাইরে বিশেষ কারণে অভিভাবকের উপস্থিতিতে কেবল ছুটি মঞ্জুর করা হবে।</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><strong>খাবার ও ডাইনিং শৃঙ্খলা:</strong> ডাইনিংয়ের নির্ধারিত সময়ে সারিবদ্ধভাবে সুন্নতি তরিকায় বসে খাবার গ্রহণ করতে হবে। খাবার অপচয় করা সম্পূর্ণরূপে নিষিদ্ধ।</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 🔘 সেকশন ৩: অনলাইন সিট ব্যবস্থাপনা (বাটনসমূহ) -->
+        <div class="action-section">
+            <h3>অনলাইন আবাসিক সিট ব্যবস্থাপনা</h3>
+            <p>নতুন সিটের জন্য আবেদন করতে অথবা বর্তমান সিট বাতিল করতে নিচের নির্ধারিত বাটনে ক্লিক করে ফরম পূরণ করুন।</p>
+            <div class="btn-group">
+                <!-- পরবর্তীতে এই href="#" এর জায়গায় আপনার গুগল ফরমের লিংক বসাবেন -->
+                <a href="#" target="_blank" class="btn btn-apply">
+                    <i class="fa-solid fa-hotel"></i> আবাসিক সিটের আবেদন
+                </a>
+                <a href="#" target="_blank" class="btn btn-cancel">
+                    <i class="fa-solid fa-circle-xmark"></i> আবাসিক সিট বাতিলকরণ
+                </a>
+            </div>
+        </div>
+
+        <!-- শেষ বাণী বক্স -->
+        <div class="motto-box">
+            <blockquote>"নিশ্চয়ই আল্লাহ সুশৃঙ্খল ও পবিত্র জীবনযাপনকারীদের ভালোবাসেন।"</blockquote>
+            <p>— ছাত্রাবাস প্রশাসন, নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</p>
+        </div>
+
+    </div>
+
+    <!-- ফুটার সেকশন -->
+    <footer>
+        <p>&copy; 2026 নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
