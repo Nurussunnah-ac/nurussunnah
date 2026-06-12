@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পরিচিতি - নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* মূল থিম ও ফন্ট */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'SolaimanLipi', Arial, sans-serif; }
+        body { background-color: #f4f7f5; color: #333; line-height: 1.8; }
+        a { text-decoration: none; }
+
+        /* হেডার ও নেভিগেশন */
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .top-bar { background-color: #1a237e; color: #fff; padding: 8px 20px; display: flex; justify-content: space-between; font-size: 14px; }
+        .logo-area { display: flex; align-items: center; padding: 15px 20px; background: linear-gradient(135deg, #0d47a1, #1b5e20); color: white; }
+        .logo-area img { height: 60px; margin-right: 15px; }
+        .logo-text h1 { font-size: 24px; font-weight: bold; }
+        .logo-text p { font-size: 14px; opacity: 0.9; }
+
+        /* মেনুবার */
+        nav { background-color: #fff; border-bottom: 3px solid #1b5e20; padding: 0 20px; }
+        .nav-links { list-style: none; display: flex; justify-content: center; }
+        .nav-links li { margin: 0 10px; }
+        .nav-links a { color: #333; font-weight: bold; padding: 15px 20px; display: block; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #1b5e20; background-color: #eef5f1; }
+
+        /* ব্যানার সেকশন */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./banner.jpg') no-repeat center center/cover;
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+
+        /* মেইন কনটেন্ট এরিয়া */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* পরিচিতি টেক্সট */
+        .about-intro { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #1b5e20; margin-bottom: 30px; }
+        .about-intro h3 { color: #1b5e20; margin-bottom: 15px; font-size: 24px; }
+        .about-intro p { font-size: 17px; text-align: justify; }
+
+        /* গ্রিড লেআউট (পরিসংখ্যান ও উদ্দেশ্য) */
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .card h3 { color: #1a237e; border-bottom: 2px solid #f1f1f1; padding-bottom: 10px; margin-bottom: 15px; font-size: 22px; }
+        
+        /* লিস্ট স্টাইল */
+        .info-list { list-style: none; }
+        .info-list li { padding: 10px 0; border-bottom: 1px solid #fafafa; font-size: 16px; display: flex; align-items: center; }
+        .info-list li i { color: #1b5e20; margin-right: 12px; font-size: 18px; width: 20px; }
+        .info-list li strong { color: #333; margin-right: 5px; }
+
+        /* আধুনিক ব্যবস্থাপনা ও প্রযুক্তি সেকশন */
+        .modern-tech { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .modern-tech h3 { color: #1b5e20; margin-bottom: 20px; font-size: 22px; border-bottom: 2px solid #f1f1f1; padding-bottom: 10px; }
+        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .tech-item { background: #f8faf8; padding: 20px; border-radius: 6px; border-top: 3px solid #1b5e20; }
+        .tech-item h4 { color: #1a237e; margin-bottom: 8px; font-size: 18px; display: flex; align-items: center; }
+        .tech-item h4 i { margin-right: 10px; color: #1b5e20; }
+
+        /* চেয়ারম্যান বাণী সেকশন */
+        .chairman-quote { background: #eef2f7; padding: 30px; border-radius: 8px; border-left: 5px solid #1a237e; margin-bottom: 40px; text-align: center; }
+        .chairman-quote blockquote { font-style: italic; font-size: 18px; color: #444; margin-bottom: 15px; font-weight: 500; }
+        .chairman-quote p { font-weight: bold; color: #1a237e; font-size: 16px; }
+
+        /* ফুটার */
+        footer { background-color: #1a237e; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 60px; }
+
+        /* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
+            .logo-area { flex-direction: column; text-align: center; }
+            .logo-area img { margin-right: 0; margin-bottom: 10px; }
+            .nav-links { flex-direction: column; text-align: center; }
+            .nav-links li { margin: 0; }
+            .nav-links a { padding: 10px; }
+            .grid-container, .tech-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার সেকশন -->
+    <header>
+        <div class="top-bar">
+            <div>Madrasah Code: 11004 | EIIN: 10706</div>
+            <div><i class="fa-solid fa-envelope"></i> Nurussunnah.ac@gmail.com</div>
+        </div>
+        <div class="logo-area">
+            <img src="./logo.png" alt="মাদরাসা লোগো">
+            <div class="logo-text">
+                <h1>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</h1>
+                <p>একটি আধুনিক দ্বীনি ও আন্তর্জাতিক মানসম্পন্ন শিক্ষাপ্রতিষ্ঠান</p>
+            </div>
+        </div>
+        <!-- মেনুবার -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="porichiti.html" class="active">পরিচিতি</a></li>
+                <li><a href="safollo.html">আমাদের সাফল্য</a></li>
+                <li><a href="academic.html">একাডেমিক</a></li>
+                <li><a href="abasik.html">আবাসিক</a></li>
+                <li><a href="folafol.html">ফলাফল</a></li>
+                <li><a href="library.html">লাইব্রেরি</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- পেজ ব্যানার -->
+    <div class="page-banner">
+        <h2>মাদরাসা পরিচিতি</h2>
+        <p>দ্বীনি ইলম ও আধুনিক প্রযুক্তির এক অনন্য সমন্বয়</p>
+    </div>
+
+    <!-- মেইন কনটেন্ট -->
+    <div class="container">
+        
+        <!-- সংক্ষিপ্ত পরিচিতি -->
+        <div class="about-intro">
+            <h3>পরিচিতি</h3>
+            <p><strong>নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</strong> একটি আধুনিক, দ্বীনি ও আন্তর্জাতিক মানসম্পন্ন শিক্ষাপ্রতিষ্ঠান। সুন্নাহর সঠিক অনুশীলন এবং সমসাময়িক যুগের চাহিদার আলোকে একঝাঁক আধুনিক প্রযুক্তি-সচেতন, দক্ষ ও মুখলিস আলেম, গবেষক এবং দাঈ তৈরিতে এই প্রতিষ্ঠান নিরলসভাবে কাজ করে যাচ্ছে। আমাদের প্রতিষ্ঠানটি অভিজ্ঞ শিক্ষকমণ্ডলীর তত্ত্বাবধানে, সম্পূর্ণ আধুনিক প্রাতিষ্ঠানিক অবকাঠামো এবং উন্নত তথ্যপ্রযুক্তি নির্ভর ব্যবস্থাপনায় পরিচালিত হচ্ছে।</p>
+        </div>
+
+        <!-- গ্রিড: পরিসংখ্যান ও লক্ষ্য -->
+        <div class="grid-container">
+            <!-- এক নজরে পরিসংখ্যান -->
+            <div class="card">
+                <h3><i class="fa-solid fa-chart-pie"></i> এক নজরে পরিসংখ্যান</h3>
+                <ul class="info-list">
+                    <li><i class="fa-solid fa-user-tie"></i> <strong>শিক্ষক ও কর্মকর্তা:</strong> ২৫ জন দক্ষ ও নিবেদিতপ্রাণ শিক্ষকমণ্ডলী।</li>
+                    <li><i class="fa-solid fa-graduation-cap"></i> <strong>অধ্যয়নরত ছাত্র:</strong> ৩০০ জন শিক্ষার্থী।</li>
+                    <li><i class="fa-solid fa-school"></i> <strong>মাদরাসা কোড:</strong> 11004</li>
+                    <li><i class="fa-solid fa-id-card"></i> <strong>ইআইআইএন (EIIN):</strong> 10706</li>
+                </ul>
+            </div>
+
+            <!-- লক্ষ্য ও উদ্দেশ্য -->
+            <div class="card">
+                <h3><i class="fa-solid fa-bullseye"></i> লক্ষ্য ও উদ্দেশ্য</h3>
+                <ul class="info-list">
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>শুদ্ধ ইলম ও আমল:</strong> কুরআন এবং সহীহ সুন্নাহর আলোকে ছাত্রদের সুপ্রতিষ্ঠিত করা।</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>শিক্ষার সফল সমন্বয়:</strong> ঐতিহ্যবাহী প্রাতিষ্ঠানিক ইলম এবং আধুনিক বিজ্ঞানের ভারসাম্য।</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>নেতৃত্ব তৈরি:</strong> আন্তর্জাতিক ভাষা শিক্ষা ও পাবলিক স্পিকিংয়ের মাধ্যমে যোগ্য করে তোলা।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- আধুনিক ব্যবস্থাপনা ও প্রযুক্তি -->
+        <div class="modern-tech">
+            <h3><i class="fa-solid fa-laptop-code"></i> তথ্যপ্রযুক্তি ও আধুনিক ব্যবস্থাপনা</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4><i class="fa-solid fa-display"></i> কম্পিউটার ল্যাব ও আইটি স্কিল</h4>
+                    <p>শিক্ষার্থীদের জন্য রয়েছে সুসজ্জিত কম্পিউটার ল্যাব, যেখানে মৌলিক কম্পিউটার ট্রেইনিং, টাইপিং এবং আইটি স্কিলের প্রাথমিক ধারণা দেওয়া হয়।</p>
+                </div>
+                <div class="tech-item">
+                    <h4><i class="fa-solid fa-chalkboard-user"></i> স্মার্ট ক্লাসরুম ও লাইব্রেরি</h4>
+                    <p>ধ্রুপদী কيتাব ও সমৃদ্ধ লাইব্রেরির পাশাপাশি রয়েছে প্রজেক্টর, মাল্টিমিডিয়া ক্লাসরুম এবং ক্লাউড-নির্ভর আধুনিক ডিজিটাল নোটিশ বোর্ড।</p>
+                </div>
+                <div class="tech-item">
+                    <h4><i class="fa-solid fa-shield-halved"></i> সুরক্ষিত আধুনিক ক্যাম্পাস</h4>
+                    <p>২৪ ঘণ্টা সিসিটিভি ক্যামেরা নিয়ন্ত্রিত নিশ্ছিদ্র নিরাপত্তা, স্বাস্থ্যসম্মত আধুনিক ডাইনিং এবং উন্নত আবাসিক আবাসন ব্যবস্থা।</p>
+                </div>
+                <div class="tech-item">
+                    <h4><i class="fa-solid fa-network-wired"></i> ডিজিটাল নোটিশ বোর্ড</h4>
+                    <p>অভিভাবক ও শিক্ষার্থীদের সুবিধার্থে গুগল ক্লাউড ও ওয়েব-নির্ভর রিয়েল-টাইম অনলাইন তথ্য ব্যবস্থাপনা পদ্ধতি।</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- চেয়ারম্যানের বাণী -->
+        <div class="chairman-quote">
+            <blockquote>"আমাদের লক্ষ্য ঐতিহ্যবাহী দ্বীনি শিক্ষার পাশাপাশি আধুনিক বিজ্ঞান ও প্রযুক্তির সমন্বয়ে এমন এক সুপ্রশিক্ষিত প্রজন্ম গড়ে তোলা, যারা বিশ্বমঞ্চে ইসলামের সঠিক বার্তা তুলে ধরবে।"</blockquote>
+            <p>— মুফতি মুহাম্মদ ছানাউল্লাহ হানাফী (হাফিজাহুল্লাহ)</p>
+            <small style="color: #666;">চেয়ারম্যান, নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট</small>
+        </div>
+
+    </div>
+
+    <!-- ফুটার সেকশন -->
+    <footer>
+        <p>&copy; 2026 নূরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
