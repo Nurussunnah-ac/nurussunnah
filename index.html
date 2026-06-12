@@ -135,58 +135,73 @@
     color: #1b5e20;
 }
 
-@media (max-width: 768px) {
-    nav {
-        display: flex;
-        justify-content: flex-end; /* বাটনটি ডানপাশে দেখাবে */
-        position: relative;
-        background-color: #fff;
-    }
-    
-    .menu-toggle {
-        display: block; /* মোবাইলে থ্রি-লাইন বাটনটি দৃশ্যমান হবে */
-    }
-    
-    .nav-links {
-        display: none; /* শুরুতে মেনুগুলো মোবাইলে লুকিয়ে থাকবে */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #ffffff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-    
-    /* থ্রি-লাইনে ক্লিক করলে এই active ক্লাসটি চালু হবে এবং মেনু দেখাবে */
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-links a {
-        padding: 15px;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    header { 
-        flex-direction: row !important; 
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 10px 5% !important; 
-    }
-    .logo {
-        font-size: 18px !important;
-    }
-    .logo img {
-        height: 35px !important;
-    }
-}
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            
+            /* লোগো বামে আর থ্রি-লাইন বাটন ডানে সোজা লাইনে রাখার জন্য */
+            header { 
+                flex-direction: row !important; 
+                justify-content: space-between !important; 
+                align-items: center !important;
+                padding: 10px 15px !important;
+            }
+            
+            .logo {
+                font-size: 16px !important;
+            }
+            .logo img {
+                height: 30px !important;
+                margin-right: 5px !important;
+            }
+
+            nav { 
+                margin-top: 0 !important; 
+                display: flex;
+                align-items: center;
+            }
+            
+            /* থ্রি-লাইন বাটন মোবাইলে সুন্দরভাবে দেখাবে */
+            .menu-toggle {
+                display: block !important;
+                padding: 10px !important;
+                font-size: 22px !important;
+                color: #1b5e20 !important;
+            }
+            
+            /* শুরুতে মেনুগুলো মোবাইলে পুরোপুরি লুকিয়ে থাকবে */
+            .nav-links {
+                display: none !important; 
+                flex-direction: column !important;
+                width: 100% !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                background-color: #ffffff !important;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+                z-index: 999 !important;
+                margin: 0 !important;
+                padding: 10px 0 !important;
+            }
+            
+            /* থ্রি-লাইনে ক্লিক করলে মেনু পপ-আপ হবে */
+            .nav-links.active {
+                display: flex !important;
+            }
+            
+            .nav-links li {
+                width: 100% !important;
+                margin: 0 !important;
+                text-align: center !important;
+            }
+            
+            .nav-links a {
+                padding: 12px !important;
+                margin: 0 !important;
+                border-bottom: 1px solid #f0f0f0 !important;
+                font-size: 15px !important;
+            }
+        }
+
 
 /* থ্রি-লাইন বাটনটি ডেক্সটপে বা বড় স্ক্রিনে লুকিয়ে থাকবে */
 .menu-toggle {
@@ -447,7 +462,7 @@
             if (navLinks.classList.contains('active')) {
                 icon.classList.replace('fa-bars', 'fa-xmark');
             } else {
-                icon.classList.replace('fa-xmark', 'fa-bars');
+                icon.classList.replace('fa-times', 'fa-bars');
             }
         });
     </script>
